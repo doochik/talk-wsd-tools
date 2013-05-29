@@ -320,6 +320,110 @@
         <p>Подробная статья: <a href="http://ru.bem.info/articles/borschik/">ru.bem.info/articles/borschik/</a></p>
         <p>Все про заморозку в моем докладе на Я.Субботнике <a href="http://events.yandex.ru/events/yasubbotnik/kiev-apr-2013/talks/837/">events.yandex.ru/events/yasubbotnik/kiev-apr-2013/talks/837/</a></p>
     </div>
+    <div class="slide shout ribbon" id="csso-title">
+        <h2>CSSO</h2>
+    </div>
+    <div class="slide shout" id="csso-1">
+        <h2>CSS Optimizer</h2>
+    </div>
+    <div class="slide shout" id="csso-2">
+        <h2>Да, еще один минимизатор CSS =)</h2>
+    </div>
+    <div class="slide">
+        <h2>Все вроде бы как обычно...</h2>
+        <ul>
+            <li>Вырезает комментарии и пробелы</li>
+            <li>Удаляет пустые декларации</li>
+            <li>Укорачивает записи (цвет, размер)</li>
+            <li>???</li>
+            <li>Строит AST дерево</li>
+        </ul>
+    </div>
+    <div class="slide">
+        <h2>Зачем AST?</h2>
+        <p>AST дает полное понимание всех деклараций и селекторов.</p>
+        <p>А значит можно менять структуру самих CSS-деклараций!</p>
+    </div>
+    <div class="slide shout">
+        <h2>Лучше один раз увидеть чем сто раз услышать</h2>
+    </div>
+    <div class="slide">
+        <h2>Объединение селекторов</h2>
+        <pre>
+            <code>.test0 {color: red}</code>
+            <code>.test1 {color: blue}</code>
+            <code>.test1 {margin: 0}</code>
+        </pre>
+        <p class="pre">&darr;</p>
+        <pre>
+            <code>.test0 {color: red}</code>
+            <code>.test1 {color: blue; margin: 0}</code>
+        </pre>
+    </div>
+    <div class="slide">
+        <h2>Слияние селекторов</h2>
+        <pre>
+            <code>.test0 {color: red}</code>
+            <code>.test1 {color: blue}</code>
+            <code>.test2 {color: blue}</code>
+        </pre>
+        <p class="pre">&darr;</p>
+        <pre>
+            <code>.test0 {color: red}</code>
+            <code>.test1, test2 {color: blue;}</code>
+        </pre>
+    </div>
+    <div class="slide">
+        <h2>Разделение селекторов</h2>
+        <pre>
+            <code>.test0 {color: red; border: none; margin: 0}</code>
+            <code>.test1 {color: blue; border: none; margin: 0}</code>
+        </pre>
+        <p class="pre">&darr;</p>
+        <pre>
+            <code>.test0 {color: red}</code>
+            <code>.test1 {color: blue}</code>
+            <code>.test0, test1 {border: none; margin: 0}</code>
+        </pre>
+    </div>
+    <div class="slide">
+        <h2>Удаление перекрываемых свойств</h2>
+        <pre>
+            <code>.test {color: red; margin: 0; color: green}</code>
+        </pre>
+        <p class="pre">&darr;</p>
+        <pre>
+            <code>.test {margin: 0; color: red}</code>
+        </pre>
+    </div>
+    <div class="slide">
+        <h2>В цифрах</h2>
+        <p>Красивая таблица показывающее тотальное превосходство CSSO.</p>
+    </div>
+    <div class="slide">
+        <h2>CSSO</h2>
+        <p>Github <a href="https://github.com/css/csso">github.com/css/csso</a></p>
+        <p>Подробная статья с примерами <a href="http://ru.bem.info/tools/csso/">ru.bem.info/tools/csso/</a></p>
+    </div>
+    <div class="slide shout ribbon" id="svgo-title">
+        <h2>SVGO</h2>
+    </div>
+    <div class="slide shout">
+        <h2>SVG Optimizer</h2>
+    </div>
+    <div class="slide">
+        <h2>Зачем</h2>
+        <p>Размер, парсинг, рендеринг</p>
+    </div>
+    <div class="slide">
+        <h2>Зачем</h2>
+        <p>Тоже AST</p>
+        <p>Что он весь плагинный и каждая минимизация - плагин</p>
+    </div>
+    <div class="slide">
+        <h2>Пример</h2>
+        <p>Стандартный пример из презентации Кира</p>
+    </div>
     <div class="slide first" id="CoverEnd">
         <div class="info" style="width: 500px; left: 50px; font-size: 100%; top: 200px">
             <p>Алексей Андросов</p>
