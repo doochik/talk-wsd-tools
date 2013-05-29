@@ -1,0 +1,344 @@
+<!DOCTYPE HTML>
+<html lang="ru">
+<head>
+	<title>Роботы для людей: боевой арсенал фронтендера</title>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=1274, user-scalable=no">
+    <link rel="stylesheet" href="themes/yandex/styles/screen.css">
+    <link rel="stylesheet" href="themes/yandex/styles/print.css" media="print">
+
+    <style>
+
+        .slide .min code
+        {
+            line-height: 40px;
+        }
+
+        .slide p.pre
+        {
+            margin-bottom: 10px;
+        }
+
+        .ico.mail
+        {
+            background: url("pictures/favicon-ie9.ico") no-repeat;
+            background-size: 18px 18px;
+        }
+
+        .slide ul.bullet-minus > li::before
+        {
+            content: '− ';
+        }
+
+        .slide ul.bullet-plus > li::before
+        {
+            content: '+ ';
+        }
+
+        .results
+        {
+            border-collapse: collapse;
+        }
+        .results td
+        {
+            border: 1px solid #000;
+            padding: 0 1em;
+        }
+
+        .results .good
+        {
+            color: #00a86b;
+        }
+
+        .results .avg
+        {
+            color: #cfb53b;
+        }
+
+        .results .bad
+        {
+            color: #de3163;
+        }
+    </style>
+</head>
+<body class="list">
+	<header class="caption">
+		<h1>Роботы для людей: боевой арсенал фронтендера</h1>
+        <p>Алексей Андросов</p>
+        <p>Старший разработчик интерфейсов</p>
+        <p>Я.Субботник, Киев, 27 апреля 2013 года</p>
+	</header>
+	<div class="slide first" id="Cover">
+        <h2 style="left: 50px; width: 815px; font-size: 60px">Криокамера для статики</h2>
+        <div class="info" style="width: 500px; left: 50px; font-size: 70%; bottom: 20px">
+            <p>Алексей Андросов</p>
+            <p>Старший разработчик интерфейсов</p>
+            <p>WSD, Санкт-Петербург, 8 июня 2013 года</p>
+        </div>
+	</div>
+	<div class="slide" id="page00">
+        <h2>Обо мне</h2>
+        <img src="pictures/photo_160x160.jpg" style="float: right; padding: 0 0 40px 40px"/>
+        <p>
+            <img src="pictures/favicon-ie9.ico" style="width: 25px; height: 25px; margin-bottom: -7px"/>
+            <a href="mailto:aandrosov@yandex-team.ru" style="margin-right: 20px">aandrosov@yandex-team.ru</a>
+            <img src="pictures/twitter-bird-blue-on-white.png" style="width: 40px; height: 40px; margin: 0 0 -15px -10px"/>
+            <a style="margin-left: -8px" href="https://twitter.com/doochik">@doochik</a>
+        </p>
+        <ul>
+            <li>По образованию – специалист по защите информации</li>
+            <li>6 лет в Яндексе, 2 года ведущий разработчик фронтенда в Я.Почте</li>
+            <li>Люблю копаться в браузерах и внедрять новые фичи из HTML5</li>
+            <li>Можете спрашивать про JS, CSS и frontend в целом</li>
+        </ul>
+	</div>
+    <div class="slide shout ribbon" id="borschik-title">
+        <h2>Borschik</h2>
+    </div>
+    <div class="slide">
+        <h2>Borschik (<a href="http://bit.ly/borschik">bit.ly/borschik</a>)</h2>
+        <p></p>
+        <ul>
+            <li>Это <mark>текстовый процессор</mark> для файлов на node.js</li>
+            <li>Умеет <mark>склеивать</mark> файлы</li>
+            <li>Умеет <mark>преобразовывать</mark> файлы</li>
+            <li>Умеет <mark>минимизировать</mark> файлы</li>
+            <li>Поддерживает «из коробки» <mark>CSS</mark> и <mark>JS</mark></li>
+            <li>Можно <mark>расширять</mark> своими «технологиями»</li>
+        </ul>
+    </div>
+    <div class="slide">
+        <h2>Внутри два понятия</h2>
+        <p></p>
+        <ul>
+            <li><mark>include</mark> – вы указываете ссылку на файл, после сборки ссылка заменяется на содержимое файла</li>
+            <li><mark>link</mark> – вы указываете ссылку на файл, после сборки ссылка преобразовывается</li>
+        </ul>
+    </div>
+    <div class="slide">
+        <h2>Склейка CSS</h2>
+        <p class="pre">page.css</p>
+        <pre>
+            <code>@import url("b-header/b-header.css");</code>
+            <code>@import url("b-footer/b-footer.css");</code>
+        </pre>
+        <p class="pre">Запускаем</p>
+        <pre class="min">
+            <code>$ borschik --input=page.css</code>
+        </pre>
+    </div>
+    <div class="slide">
+        <h2>Склейка CSS</h2>
+        <p class="pre">Получаем</p>
+        <pre class="min">
+            <code>/* b-header/b-header.css begin */</code>
+            <code>  ...b-header/b-header.css content ...</code>
+            <code>/* b-header/b-header.css end */</code>
+            <code> </code>
+            <code>/* b-footer/b-footer.css begin */</code>
+            <code>  ...b-footer/b-footer.css content ...</code>
+            <code>/* b-footer/b-footer.css end */</code>
+        </pre>
+    </div>
+    <div class="slide">
+        <h2>Склейка CSS</h2>
+        <p>Правильное раскрытие путей</p>
+        <p class="pre">b-footer/b-footer.css</p>
+        <pre class="min">
+            <code>.b-footer</code>
+            <code>{</code>
+            <code>    border-top: 1px solid #000;</code>
+            <code>    background: url("<mark>bg.png</mark>");</code>
+            <code>}</code>
+        </pre>
+    </div>
+    <div class="slide">
+        <h2>Склейка CSS</h2>
+        <p>Правильное раскрытие путей</p>
+        <p class="pre">В page.css получим</p>
+        <pre class="min">
+            <code>.b-footer</code>
+            <code>{</code>
+            <code>    border-top: 1px solid #000;</code>
+            <code>    background: url("<mark>b-footer/bg.png</mark>");</code>
+            <code>}</code>
+        </pre>
+    </div>
+    <div class="slide">
+        <h2>Склейка JS (вариант 1)</h2>
+        <p><mark>borschik:include</mark> в /**/ раскрываются без преобразований</p>
+        <p class="pre">page.js</p>
+        <pre>
+            <code>/* <mark>borschik:include</mark>:b-header/b-header.js */</code>
+            <code>/* <mark>borschik:include</mark>:b-footer/b-footer.js */</code>
+        </pre>
+        <p class="pre">Запускаем</p>
+        <pre class="min">
+            <code>$ borschik --input=page.js</code>
+        </pre>
+    </div>
+    <div class="slide">
+        <h2>Склейка JS (вариант 1)</h2>
+        <p class="pre">Получаем</p>
+        <pre class="min">
+            <code>/* b-header/b-header.js begin */</code>
+            <code>  ...b-header/b-header.js content ...</code>
+            <code>/* b-header/b-header.js end */</code>
+            <code> </code>
+            <code>/* b-footer/b-footer.js begin */</code>
+            <code>  ...b-footer/b-footer.js content ...</code>
+            <code>/* b-footer/b-footer.js end */</code>
+        </pre>
+    </div>
+    <div class="slide">
+        <h2>Склейка JS (вариант 2)</h2>
+        <p><mark>borschik:include</mark> в "" раскрываются через JSON.stringify</p>
+        <p class="pre">page.js</p>
+        <pre>
+            <code>var prj = {};</code>
+            <code>prj.STATIC_HOST = "<mark>borschik:include</mark>:configs/host.txt";</code>
+        </pre>
+        <p class="pre">Запускаем</p>
+        <pre class="min">
+            <code>$ borschik --input=page.js</code>
+        </pre>
+    </div>
+    <div class="slide">
+        <h2>Склейка JS (вариант 2)</h2>
+        <p class="pre">Получаем</p>
+        <pre>
+            <code>var prj = {};</code>
+            <code>prj.STATIC_HOST = "yandex.st";</code>
+        </pre>
+    </div>
+    <div class="slide">
+        <h2>Минимизация</h2>
+        <ul>
+            <li>CSS – через CSSO</li>
+            <li>JS – через UglifyJS</li>
+            <li>У каждой технологии можно переопределить метод minimize</li>
+        </ul>
+    </div>
+    <div class="slide">
+        <h2>Относительные ссылки на ресурсы</h2>
+        <ul>
+            <li>Можно изменить ссылки с относительных на абсолютные или другие относительные</li>
+            <li>Управляется с помощью конфигов в файле .borschik</li>
+            <li>Конфигов может быть много (в разных директориях)</li>
+        </ul>
+    </div>
+    <div class="slide">
+        <h2>Конфиг .borschik</h2>
+        <pre>
+            <code>{</code>
+            <code>    "paths" : {</code>
+            <code>        "./": "/",</code>
+            <code>        "css/": "//yandex.st/my-prj/css/"</code>
+            <code>    }</code>
+            <code>}</code>
+        </pre>
+    </div>
+    <div class="slide">
+        <h2>Попробуем!</h2>
+        <p class="pre">css/style.css</p>
+        <pre>
+            <code>.bg1 {</code>
+            <code>    background: url("../imgs/bg1.png")</code>
+            <code>}</code>
+            <code>.bg2 {</code>
+            <code>    background: url("bg2.png")</code>
+            <code>}</code>
+        </pre>
+    </div>
+    <div class="slide">
+        <h2>После сборки получим</h2>
+        <pre>
+            <code>.bg1 {</code>
+            <code>    background: url("/imgs/bg1.png")</code>
+            <code>}</code>
+            <code>.bg2 {</code>
+            <code>    background: url("//yandex.st/my-prj/css/bg2.png")</code>
+            <code>}</code>
+        </pre>
+    </div>
+    <div class="slide">
+        <h2>Заморозка файлов</h2>
+        <p>Загрузка ресурсов (например, картинок) по урлу, зависящему от содержимого файла (хеш-суммы).</p>
+        <p>Все ссылки на ресурсы заменяются на хеш от контента файла и создается файл с таким именем.</p>
+    </div>
+    <div class="slide">
+        <h2>Заморозка файлов: конфиг</h2>
+        <pre class="min">
+            <code>{</code>
+            <code>    "paths" : {</code>
+            <code>        "_": "//yandex.st/prj/_"</code>
+            <code>    },</code>
+            <code>    "freeze_paths" : {</code>
+            <code>        "i/bg": "../../_",</code>
+            <code>        "i/ico": "../../_"</code>
+            <code>    }</code>
+            <code>}</code>
+        </pre>
+    </div>
+    <div class="slide">
+        <h2>Попробуем</h2>
+        <p class="pre">css/style.css</p>
+        <pre>
+            <code>.style {</code>
+            <code>    background: url("../i/bg/hot.png");</code>
+            <code>}</code>
+        </pre>
+        <p class="pre">Запускаем</p>
+        <pre>
+            <code>$ borschik --input=css/style.css --freeze=yes</code>
+        </pre>
+    </div>
+    <div class="slide">
+        <h2>Получаем</h2>
+        <pre>
+            <code>.style {</code>
+            <code>  background: url("//yandex.st/prj/_/jUK5O9GsR0hf0.png");</code>
+            <code>}</code>
+        </pre>
+    </div>
+    <div class="slide">
+        <h2>Заморозка файлов</h2>
+        <p>Можно фризить:</p>
+        <ul>
+            <li>не только картинки, а шрифты, флешки и т.п.</li>
+            <li>картинки в JS(!)</li>
+            <li>картинки с динамическими урлами в JS(!!!)</li>
+            <li>сами JS- и CSS-файлы</li>
+        </ul>
+    </div>
+    <div class="slide shout">
+        <h2>И это еще не всё!</h2>
+    </div>
+    <div class="slide">
+        <h2>Borschik</h2>
+        <p>GitHub: <a href="https://github.com/bem/borschik">github.com/bem/borschik</a>. Пиши ишью @ Пулреквесть!</p>
+        <p>Подробная статья: <a href="http://ru.bem.info/articles/borschik/">ru.bem.info/articles/borschik/</a></p>
+        <p>Все про заморозку в моем докладе на Я.Субботнике <a href="http://events.yandex.ru/events/yasubbotnik/kiev-apr-2013/talks/837/">events.yandex.ru/events/yasubbotnik/kiev-apr-2013/talks/837/</a></p>
+    </div>
+    <div class="slide first" id="CoverEnd">
+        <div class="info" style="width: 500px; left: 50px; font-size: 100%; top: 200px">
+            <p>Алексей Андросов</p>
+            <p>Старший разработчик интерфейсов</p>
+            <p>
+                <img src="pictures/favicon-ie9.ico" style="width: 25px; height: 25px; margin-bottom: -7px"/>
+                <a href="mailto:doochik@ya.ru" style="margin-right: 20px">doochik@ya.ru</a>
+            </p>
+            <p>
+                <img src="pictures/twitter-bird-blue-on-white.png" style="width: 40px; height: 40px; margin: 0 0 -15px -10px"/>
+                <a style="margin-left: -8px" href="https://twitter.com/doochik">@doochik</a>
+            </p>
+            <p>
+                <img src="pictures/github.svg" style="width: 40px; height: 40px; margin: 0 0 -15px -10px"/>
+                <a style="margin-left: -8px" href="https://github.com/doochik">github.com/doochik</a>
+            </p>
+        </div>
+    </div>
+	<div class="progress"><div></div></div>
+	<script src="scripts/script.js"></script>
+</body>
+</html>
