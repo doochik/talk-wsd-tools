@@ -352,6 +352,36 @@
         <h2>Все вроде бы как обычно...</h2>
         <ul>
             <li>Вырезает комментарии и пробелы</li>
+        </ul>
+    </div>
+    <div class="slide">
+        <h2>Все вроде бы как обычно...</h2>
+        <ul>
+            <li>Вырезает комментарии и пробелы</li>
+            <li>Удаляет пустые декларации</li>
+        </ul>
+    </div>
+    <div class="slide">
+        <h2>Все вроде бы как обычно...</h2>
+        <ul>
+            <li>Вырезает комментарии и пробелы</li>
+            <li>Удаляет пустые декларации</li>
+            <li>Укорачивает записи (цвет, размер)</li>
+        </ul>
+    </div>
+    <div class="slide">
+        <h2>Все вроде бы как обычно...</h2>
+        <ul>
+            <li>Вырезает комментарии и пробелы</li>
+            <li>Удаляет пустые декларации</li>
+            <li>Укорачивает записи (цвет, размер)</li>
+            <li>???</li>
+        </ul>
+    </div>
+    <div class="slide">
+        <h2>Все вроде бы как обычно...</h2>
+        <ul>
+            <li>Вырезает комментарии и пробелы</li>
             <li>Удаляет пустые декларации</li>
             <li>Укорачивает записи (цвет, размер)</li>
             <li>???</li>
@@ -369,55 +399,55 @@
     <div class="slide">
         <h2>Объединение селекторов</h2>
         <pre>
-            <code>.test0 {color: red}</code>
-            <code>.test1 {color: blue}</code>
-            <code>.test1 {margin: 0}</code>
+            <code>.merge0 {color: red}</code>
+            <code><mark>.merge1</mark> {color: blue}</code>
+            <code><mark>.merge1</mark> {margin: 0}</code>
         </pre>
         <p class="pre">&darr;</p>
         <pre>
-            <code>.test0 {color: red}</code>
-            <code>.test1 {color: blue; margin: 0}</code>
+            <code>.merge0 {color: red}</code>
+            <code><mark>.merge1</mark> {color: blue; margin: 0}</code>
         </pre>
     </div>
     <div class="slide">
-        <h2>Слияние селекторов</h2>
+        <h2>Объединение свойств</h2>
         <pre>
-            <code>.test0 {color: red}</code>
-            <code>.test1 {color: blue}</code>
-            <code>.test2 {color: blue}</code>
+            <code>.property0 {margin: 1em}</code>
+            <code><mark>.property1</mark> {margin: 0}</code>
+            <code><mark>.property2</mark> {margin: 0}</code>
         </pre>
         <p class="pre">&darr;</p>
         <pre>
-            <code>.test0 {color: red}</code>
-            <code>.test1, test2 {color: blue;}</code>
+            <code>.property0 {margin: 1em}</code>
+            <code><mark>.property1, property2</mark> {margin: 0}</code>
         </pre>
     </div>
     <div class="slide">
         <h2>Разделение селекторов</h2>
         <pre>
-            <code>.test0 {color: red; border: none; margin: 0}</code>
-            <code>.test1 {color: blue; border: none; margin: 0}</code>
+            <code>.split0 {color: red; <mark>border: none; margin: 0</mark>}</code>
+            <code>.split1 {color: blue; <mark>border: none; margin: 0</mark>}</code>
         </pre>
         <p class="pre">&darr;</p>
         <pre>
-            <code>.test0 {color: red}</code>
-            <code>.test1 {color: blue}</code>
-            <code>.test0, test1 {border: none; margin: 0}</code>
+            <code>.split0 {color: red}</code>
+            <code>.split1 {color: blue}</code>
+            <code>.split0, split1 {<mark>border: none; margin: 0</mark>}</code>
         </pre>
     </div>
     <div class="slide">
         <h2>Удаление перекрываемых свойств</h2>
         <pre>
-            <code>.test {color: red; margin: 0; color: green}</code>
+            <code>.override {<mark>padding: 1em</mark>; margin: 0; <mark>padding: 0</mark>}</code>
         </pre>
         <p class="pre">&darr;</p>
         <pre>
-            <code>.test {margin: 0; color: red}</code>
+            <code>.override {margin: 0; <mark>padding: 0</mark>}</code>
         </pre>
     </div>
     <div class="slide" id="csso-test">
         <h2>В цифрах</h2>
-        <p>В тесте использовались</p>
+        <p>В тестах использовались</p>
         <ul>
             <li>Microsoft Ajax Minifier 4.93</li>
             <li>CSSO 1.3.7</li>
@@ -579,7 +609,7 @@
     </div>
     <div class="slide">
         <h2>CSSO</h2>
-        <p>Github <a href="https://github.com/css/csso">github.com/css/csso</a></p>
+        <p>Github <a href="https://github.com/css/csso">github.com/css/csso</a>. Пиши ишью@Пулреквесть!</p>
         <p>Подробная статья с примерами <a href="http://ru.bem.info/tools/csso/">ru.bem.info/tools/csso/</a></p>
     </div>
     <div class="slide shout ribbon" id="svgo-title">
