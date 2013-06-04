@@ -19,6 +19,11 @@
             margin-bottom: 10px;
         }
 
+        .slide pre.min
+        {
+            margin-bottom: 30px;
+        }
+
         .ico.mail
         {
             background: url("pictures/favicon-ie9.ico") no-repeat;
@@ -121,6 +126,9 @@
             <li><mark>link</mark> – вы указываете ссылку на файл, после сборки ссылка преобразовывается</li>
         </ul>
     </div>
+    <div class="slide shout ribbon" id="borschik-include">
+        <h2>Borschik: include</h2>
+    </div>
     <div class="slide">
         <h2>Склейка CSS</h2>
         <p class="pre">page.css</p>
@@ -213,13 +221,8 @@
             <code>prj.STATIC_HOST = "<mark>http://yandex.st</mark>";</code>
         </pre>
     </div>
-    <div class="slide">
-        <h2>Минимизация</h2>
-        <ul>
-            <li>CSS – через CSSO</li>
-            <li>JS – через UglifyJS</li>
-            <li>У каждой технологии можно переопределить метод minimize</li>
-        </ul>
+    <div class="slide shout ribbon" id="borschik-link">
+        <h2>Borschik: link</h2>
     </div>
     <div class="slide">
         <h2>Относительные ссылки на ресурсы</h2>
@@ -242,26 +245,36 @@
     </div>
     <div class="slide">
         <h2>Попробуем!</h2>
-        <p class="pre">css/style.css</p>
-        <pre>
-            <code>.bg1 {</code>
-            <code>    background: url("../imgs/bg1.png")</code>
-            <code>}</code>
-            <code>.bg2 {</code>
-            <code>    background: url("bg2.png")</code>
-            <code>}</code>
+        <p class="pre"><strong>css/style.css</strong></p>
+        <pre class="min">
+            <code>background: url("../imgs/bg1.png")</code>
+        </pre>
+        <p class="pre"><strong>Правило</strong></p>
+        <pre class="min">
+            <code>"./": "/"</code>
+        </pre>
+        <p class="pre"><strong>Результат</strong></p>
+        <pre class="min">
+            <code>background: url("/imgs/bg1.png")</code>
         </pre>
     </div>
     <div class="slide">
-        <h2>После сборки получим</h2>
-        <pre>
-            <code>.bg1 {</code>
-            <code>    background: url("/imgs/bg1.png")</code>
-            <code>}</code>
-            <code>.bg2 {</code>
-            <code>    background: url("//yandex.st/my-prj/css/bg2.png")</code>
-            <code>}</code>
+        <h2>Попробуем!</h2>
+        <p class="pre"><strong>css/style.css</strong></p>
+        <pre class="min">
+            <code>background: url("bg2.png")</code>
         </pre>
+        <p class="pre"><strong>Правило</strong></p>
+        <pre class="min">
+            <code>"css/": "//yandex.st/my-prj/css/"</code>
+        </pre>
+        <p class="pre"><strong>Результат</strong></p>
+        <pre class="min">
+            <code>background: url("//yandex.st/my-prj/css/bg2.png")</code>
+        </pre>
+    </div>
+    <div class="slide shout ribbon" id="borschik-freeze">
+        <h2>Borschik: freeze</h2>
     </div>
     <div class="slide">
         <h2>Заморозка файлов</h2>
@@ -315,6 +328,14 @@
     </div>
     <div class="slide shout">
         <h2>И это еще не всё!</h2>
+    </div>
+    <div class="slide">
+        <h2>Минимизация</h2>
+        <ul>
+            <li>CSS – через CSSO</li>
+            <li>JS – через UglifyJS</li>
+            <li>У каждой технологии можно переопределить метод minimize</li>
+        </ul>
     </div>
     <div class="slide">
         <h2>Borschik</h2>
