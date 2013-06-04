@@ -285,12 +285,8 @@
         <h2>Заморозка файлов: конфиг</h2>
         <pre class="min">
             <code>{</code>
-            <code>    "paths" : {</code>
-            <code>        "_": "//yandex.st/prj/_"</code>
-            <code>    },</code>
             <code>    "freeze_paths" : {</code>
-            <code>        "i/bg": "../../_",</code>
-            <code>        "i/ico": "../../_"</code>
+            <code>        "css": "../_"</code>
             <code>    }</code>
             <code>}</code>
         </pre>
@@ -300,7 +296,7 @@
         <p class="pre">css/style.css</p>
         <pre>
             <code>.style {</code>
-            <code>    background: url("../i/bg/hot.png");</code>
+            <code>    background: url("<mark>hot.png</mark>");</code>
             <code>}</code>
         </pre>
         <p class="pre">Запускаем</p>
@@ -312,7 +308,7 @@
         <h2>Получаем</h2>
         <pre>
             <code>.style {</code>
-            <code>  background: url("//yandex.st/prj/_/jUK5O9GsR0hf0.png");</code>
+            <code>  background: url("<mark>../_/jUK5O9GsR0hf0.png</mark>");</code>
             <code>}</code>
         </pre>
     </div>
@@ -320,7 +316,7 @@
         <h2>Заморозка файлов</h2>
         <p>Можно фризить:</p>
         <ul>
-            <li>не только картинки, а шрифты, флешки и т.п.</li>
+            <li>не только картинки, а шрифты, swf и т.п.</li>
             <li>картинки в JS(!)</li>
             <li>картинки с динамическими урлами в JS(!!!)</li>
             <li>сами JS- и CSS-файлы</li>
@@ -339,7 +335,7 @@
     </div>
     <div class="slide">
         <h2>Borschik</h2>
-        <p>GitHub: <a href="https://github.com/bem/borschik">github.com/bem/borschik</a>. Пиши ишью @ Пулреквесть!</p>
+        <p>GitHub: <a href="https://github.com/bem/borschik">github.com/bem/borschik</a>. Пиши ишью@Пулреквесть!</p>
         <p>Подробная статья: <a href="http://ru.bem.info/articles/borschik/">ru.bem.info/articles/borschik/</a></p>
         <p>Все про заморозку в моем докладе на Я.Субботнике <a href="http://events.yandex.ru/events/yasubbotnik/kiev-apr-2013/talks/837/">events.yandex.ru/events/yasubbotnik/kiev-apr-2013/talks/837/</a></p>
     </div>
