@@ -60,6 +60,11 @@
         {
             color: #de3163;
         }
+
+        code.comment
+        {
+            color: #999
+        }
     </style>
 </head>
 <body class="list">
@@ -132,13 +137,13 @@
         <h2>Склейка CSS</h2>
         <p class="pre">Получаем</p>
         <pre class="min">
-            <code>/* b-header/b-header.css begin */</code>
-            <code>  ...b-header/b-header.css content ...</code>
-            <code>/* b-header/b-header.css end */</code>
+            <code class="comment">/* b-header/b-header.css begin */</code>
+            <code>  .b-header {...}</code>
+            <code class="comment">/* b-header/b-header.css end */</code>
             <code> </code>
-            <code>/* b-footer/b-footer.css begin */</code>
-            <code>  ...b-footer/b-footer.css content ...</code>
-            <code>/* b-footer/b-footer.css end */</code>
+            <code class="comment">/* b-footer/b-footer.css begin */</code>
+            <code>  .b-footer {...}</code>
+            <code class="comment">/* b-footer/b-footer.css end */</code>
         </pre>
     </div>
     <div class="slide">
@@ -146,9 +151,7 @@
         <p>Правильное раскрытие путей</p>
         <p class="pre">b-footer/b-footer.css</p>
         <pre class="min">
-            <code>.b-footer</code>
-            <code>{</code>
-            <code>    border-top: 1px solid #000;</code>
+            <code>.b-footer {</code>
             <code>    background: url("<mark>bg.png</mark>");</code>
             <code>}</code>
         </pre>
@@ -158,9 +161,7 @@
         <p>Правильное раскрытие путей</p>
         <p class="pre">В page.css получим</p>
         <pre class="min">
-            <code>.b-footer</code>
-            <code>{</code>
-            <code>    border-top: 1px solid #000;</code>
+            <code>.b-footer {</code>
             <code>    background: url("<mark>b-footer/bg.png</mark>");</code>
             <code>}</code>
         </pre>
@@ -170,8 +171,8 @@
         <p><mark>borschik:include</mark> в /**/ раскрываются без преобразований</p>
         <p class="pre">page.js</p>
         <pre>
-            <code>/* <mark>borschik:include</mark>:b-header/b-header.js */</code>
-            <code>/* <mark>borschik:include</mark>:b-footer/b-footer.js */</code>
+            <code>/* <mark>borschik:include:b-header/b-header.js</mark> */</code>
+            <code>/* <mark>borschik:include:b-footer/b-footer.js</mark> */</code>
         </pre>
         <p class="pre">Запускаем</p>
         <pre class="min">
@@ -182,26 +183,26 @@
         <h2>Склейка JS (вариант 1)</h2>
         <p class="pre">Получаем</p>
         <pre class="min">
-            <code>/* b-header/b-header.js begin */</code>
+            <code class="comment">/* b-header/b-header.js begin */</code>
             <code>  ...b-header/b-header.js content ...</code>
-            <code>/* b-header/b-header.js end */</code>
+            <code class="comment">/* b-header/b-header.js end */</code>
             <code> </code>
-            <code>/* b-footer/b-footer.js begin */</code>
+            <code class="comment">/* b-footer/b-footer.js begin */</code>
             <code>  ...b-footer/b-footer.js content ...</code>
-            <code>/* b-footer/b-footer.js end */</code>
+            <code class="comment">/* b-footer/b-footer.js end */</code>
         </pre>
     </div>
     <div class="slide">
         <h2>Склейка JS (вариант 2)</h2>
-        <p><mark>borschik:include</mark> в "" раскрываются через JSON.stringify</p>
+        <p><mark>"borschik:include"</mark> раскрывается через JSON.stringify</p>
         <p class="pre">page.js</p>
         <pre>
             <code>var prj = {};</code>
-            <code>prj.STATIC_HOST = "<mark>borschik:include</mark>:configs/host.txt";</code>
+            <code>prj.STATIC_HOST = "<mark>borschik:include:configs/host.txt</mark>";</code>
         </pre>
-        <p class="pre">Запускаем</p>
+        <p class="pre">host.txt</p>
         <pre class="min">
-            <code>$ borschik --input=page.js</code>
+            <code>http://yandex.st</code>
         </pre>
     </div>
     <div class="slide">
@@ -209,7 +210,7 @@
         <p class="pre">Получаем</p>
         <pre>
             <code>var prj = {};</code>
-            <code>prj.STATIC_HOST = "yandex.st";</code>
+            <code>prj.STATIC_HOST = "<mark>http://yandex.st</mark>";</code>
         </pre>
     </div>
     <div class="slide">
