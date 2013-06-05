@@ -575,6 +575,12 @@ body {
 		visibility:visible;
 		}
 
+    .full .slide.slide_counter_no:after,
+    .full .slide.slide_counter_no ~ .progress
+    {
+        display: none;
+    }
+
 /* Next Lists */
 .full .slide li.next {
 	opacity:0;
