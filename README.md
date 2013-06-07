@@ -1,4 +1,4 @@
 wsd-borschik
 ===========
 
-[Смотреть](https://github.com/pages/doochik/talk-wsd-tools/)
+[Смотреть](http://doochik.github.io/talk-wsd-tools/)
