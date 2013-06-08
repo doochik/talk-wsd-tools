@@ -158,20 +158,20 @@
         <h2>Borschik</h2>
         <p></p>
         <ul>
-            <li>Это <mark>текстовый процессор</mark> для файлов</li>
-            <li>Умеет <mark>склеивать</mark> файлы</li>
-            <li>Умеет <mark>преобразовывать</mark> файлы</li>
-            <li>Умеет <mark>минимизировать</mark> файлы</li>
-            <li>Поддерживает «из коробки» <mark>CSS</mark> и <mark>JS</mark></li>
-            <li>Можно <mark>расширять</mark> своими «технологиями»</li>
+            <li>Это <strong>текстовый процессор</strong> для файлов</li>
+            <li>Умеет <strong>склеивать</strong> файлы</li>
+            <li>Умеет <strong>преобразовывать</strong> файлы</li>
+            <li>Умеет <strong>минимизировать</strong> файлы</li>
+            <li>Поддерживает «из коробки» <strong>CSS</strong> и <strong>JS</strong></li>
+            <li>Можно <strong>расширять</strong> своими «технологиями»</li>
         </ul>
     </div>
     <div class="slide">
         <h2>Внутри два понятия</h2>
         <p></p>
         <ul>
-            <li><mark>include</mark> – вы указываете ссылку на файл, после сборки ссылка заменяется на содержимое файла</li>
-            <li><mark>link</mark> – вы указываете ссылку на файл, после сборки ссылка преобразовывается</li>
+            <li><strong>include</strong> – вы указываете ссылку на файл, после сборки ссылка заменяется на содержимое файла</li>
+            <li><strong>link</strong> – вы указываете ссылку на файл, после сборки ссылка преобразовывается</li>
         </ul>
     </div>
     <div class="slide shout ribbon" id="borschik-include">
@@ -224,7 +224,7 @@
     </div>
     <div class="slide">
         <h2>Склейка JS (вариант 1)</h2>
-        <p><mark>borschik:include</mark> в /**/ раскрываются без преобразований</p>
+        <p><code>borschik:include</code> в /**/ раскрываются без преобразований</p>
         <p class="pre">page.js</p>
         <pre>
             <code>/* <mark>borschik:include:b-header/b-header.js</mark> */</code>
@@ -250,7 +250,7 @@
     </div>
     <div class="slide">
         <h2>Склейка JS (вариант 2)</h2>
-        <p><mark>"borschik:include"</mark> раскрывается через JSON.stringify</p>
+        <p><code>"borschik:include"</code> раскрывается через JSON.stringify</p>
         <p class="pre">page.js</p>
         <pre>
             <code>var prj = {};</code>
@@ -384,11 +384,20 @@
     <div class="slide">
         <h2>Borschik</h2>
         <p>GitHub: <a href="https://github.com/bem/borschik">github.com/bem/borschik</a></p>
+    </div>
+    <div class="slide">
+        <h2>Borschik</h2>
+        <p>GitHub: <a href="https://github.com/bem/borschik">github.com/bem/borschik</a></p>
+        <p>Подробная статья: <a href="http://bit.ly/ru-borschik ">bit.ly/ru-borschik</a></p>
+    </div>
+    <div class="slide">
+        <h2>Borschik</h2>
+        <p>GitHub: <a href="https://github.com/bem/borschik">github.com/bem/borschik</a></p>
         <p>Подробная статья: <a href="http://bit.ly/ru-borschik ">bit.ly/ru-borschik</a></p>
         <p>Всё про заморозку в моем докладе на Я.Субботнике:<br/><a href="http://bit.ly/doochik-kiev">bit.ly/doochik-kiev</a></p>
     </div>
-    <div class="slide cover" style="background: white">
-        <img src="pictures/advice-dog.jpg" style="width: 660px; right: 0; margin: 0 auto">
+    <div class="slide cover h c" style="background: #fff">
+        <img src="pictures/advice-dog.jpg" style="width: 660px;">
     </div>
     <div class="slide shout ribbon" id="csso-title">
         <h2>CSSO</h2>
@@ -436,7 +445,7 @@
             <li>Удаляет пустые декларации</li>
             <li>Укорачивает записи (цвет, размер)</li>
             <li>???</li>
-            <li><mark>Строит AST дерево</mark></li>
+            <li><code>Строит AST дерево</code></li>
         </ul>
     </div>
     <div class="slide">
@@ -661,10 +670,14 @@
     <div class="slide">
         <h2>CSSO</h2>
         <p>Github <a href="https://github.com/css/csso">github.com/css/csso</a></p>
+    </div>
+    <div class="slide">
+        <h2>CSSO</h2>
+        <p>Github <a href="https://github.com/css/csso">github.com/css/csso</a></p>
         <p>Подробная статья с примерами <a href="http://bit.ly/ru-csso">bit.ly/ru-csso</a></p>
     </div>
-    <div class="slide cover" style="background: white">
-        <img src="pictures/advice-dog.jpg" style="width: 660px; right: 0; margin: 0 auto">
+    <div class="slide cover h c" style="background: white">
+        <img src="pictures/advice-dog.jpg" style="width: 660px;">
     </div>
     <div class="slide shout ribbon" id="svgo-title">
         <h2>SVGO</h2>
@@ -850,14 +863,14 @@
         <h2>Еще больше!</h2>
         <ul>
             <li>удаление невидимых элементов</li>
-            <li>конвертирование style в атрибуты</li>
+            <li>конвертирование <code>&lt;style></code> в атрибуты</li>
         </ul>
     </div>
     <div class="slide">
         <h2>Еще больше!</h2>
         <ul>
             <li>удаление невидимых элементов</li>
-            <li>конвертирование style в атрибуты</li>
+            <li>конвертирование <code>&lt;style></code> в атрибуты</li>
             <li>вынесение общих атрибутов в группу</li>
         </ul>
     </div>
@@ -865,29 +878,29 @@
         <h2>Еще больше!</h2>
         <ul>
             <li>удаление невидимых элементов</li>
-            <li>конвертирование style в атрибуты</li>
+            <li>конвертирование <code>&lt;style></code> в атрибуты</li>
             <li>вынесение общих атрибутов в группу</li>
-            <li>оптимизация кривых в Path</li>
+            <li>оптимизация кривых в <code>Path</code></li>
         </ul>
     </div>
     <div class="slide">
         <h2>Еще больше!</h2>
         <ul>
             <li>удаление невидимых элементов</li>
-            <li>конвертирование style в атрибуты</li>
+            <li>конвертирование <code>&lt;style></code> в атрибуты</li>
             <li>вынесение общих атрибутов в группу</li>
-            <li>оптимизация кривых в Path</li>
-            <li>уменьшение количества точек в Polyline</li>
+            <li>оптимизация кривых в <code>Path</code></li>
+            <li>уменьшение количества точек в <code>Polyline</code></li>
         </ul>
     </div>
     <div class="slide">
         <h2>Еще больше!</h2>
         <ul>
             <li>удаление невидимых элементов</li>
-            <li>конвертирование style в атрибуты</li>
+            <li>конвертирование <code>&lt;style></code> в атрибуты</li>
             <li>вынесение общих атрибутов в группу</li>
-            <li>оптимизация кривых в Path</li>
-            <li>уменьшение количества точек в Polyline</li>
+            <li>оптимизация кривых в <code>Path</code></li>
+            <li>уменьшение количества точек в <code>Polyline</code></li>
             <li>округление дробных значений</li>
         </ul>
     </div>
@@ -895,10 +908,10 @@
         <h2>Еще больше!</h2>
         <ul>
             <li>удаление невидимых элементов</li>
-            <li>конвертирование style в атрибуты</li>
+            <li>конвертирование <code>&lt;style></code> в атрибуты</li>
             <li>вынесение общих атрибутов в группу</li>
-            <li>оптимизация кривых в Path</li>
-            <li>уменьшение количества точек в Polyline</li>
+            <li>оптимизация кривых в <code>Path</code></li>
+            <li>уменьшение количества точек в <code>Polyline</code></li>
             <li>округление дробных значений</li>
             <li>... и это еще не всё!</li>
         </ul>
@@ -907,8 +920,8 @@
         <h2>SVGO</h2>
         <p>Github <a href="https://github.com/svg/svgo">github.com/svg/svgo</a></p>
     </div>
-    <div class="slide cover" style="background: white">
-        <img src="pictures/advice-dog.jpg" style="width: 660px; right: 0; margin: 0 auto">
+    <div class="slide cover h c" style="background: white">
+        <img src="pictures/advice-dog.jpg" style="width: 660px;">
     </div>
     <div class="slide" id="about-bem">
         <h2>Ждем отзывы и вопросы!</h2>
